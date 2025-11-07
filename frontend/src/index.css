@@ -1,0 +1,203 @@
+@import "tailwindcss";
+
+/* Clean, responsive dashboard styles */
+
+.jd-root {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #0f172a;
+  padding: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.jd-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.jd-title h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #0b1220;
+}
+
+.jd-sub {
+  margin: 4px 0 0;
+  color: #475569;
+  font-size: 0.9rem;
+}
+
+.jd-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex: 1 1 340px;
+  justify-content: flex-end;
+}
+
+.jd-input {
+  min-width: 220px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #e6eef6;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(15,23,42,0.04);
+  outline: none;
+  transition: box-shadow .15s ease, border-color .15s ease;
+}
+
+.jd-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59,130,246,0.08);
+}
+
+.jd-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(180deg, #0ea5a4 , #048888);
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform .06s ease, opacity .12s ease;
+}
+
+.jd-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.jd-main {
+  margin-top: 8px;
+}
+
+.section-title {
+  margin: 0 0 12px 0;
+  font-size: 1.1rem;
+  color: #0b1220;
+}
+
+.empty {
+  border: 1px dashed #cbd5e1;
+  padding: 28px;
+  border-radius: 10px;
+  text-align: center;
+  color: #64748b;
+  background: #fbfdff;
+}
+
+.job-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.job-card {
+  background: #ffffff;
+  padding: 14px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(7,12,20,0.06);
+  border: 1px solid rgba(15,23,42,0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.job-title {
+  margin: 0;
+  font-size: 1rem;
+  color: #0b1220;
+  line-height: 1.2;
+}
+
+.status {
+  font-size: 0.75rem;
+  padding: 6px 8px;
+  border-radius: 999px;
+  color: #08203a;
+  background: #e6f1ff;
+  font-weight: 600;
+}
+
+.status.unknown {
+  background: #fff7ed;
+  color: #92400e;
+}
+
+.job-company {
+  margin: 0;
+  color: #475569;
+  font-size: 0.9rem;
+  min-height: 36px;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.visit-btn {
+  text-decoration: none;
+  padding: 8px 12px;
+  background: #0ea5a4;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background .12s ease, transform .06s ease;
+}
+
+.visit-btn:hover {
+  background: #059e9a;
+  transform: translateY(-1px);
+}
+
+.date {
+  color: #94a3b8;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+/* spinner */
+.spinner {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.25);
+  border-top-color: rgba(255,255,255,0.95);
+  animation: spin 0.9s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* responsive tweaks */
+@media (max-width: 640px) {
+  .jd-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .jd-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .jd-input { flex: 1 1 auto; }
+}
